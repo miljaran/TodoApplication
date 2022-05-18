@@ -7,7 +7,7 @@ const SingleItem = (props) => {
 
   return (
     <div className="item" key={item.name}>
-      <span className="projectName" onClick={select}>{item.name}</span>
+      <span className="itemName" onClick={select}>{item.name}</span>
       &nbsp;<span className="itemDate">- {date.toLocaleDateString()}</span>
         <input type="checkbox" checked={item.done} onChange={handleCheck}/>
     </div>

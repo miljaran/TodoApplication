@@ -1,15 +1,15 @@
 .projectName:hover {
   cursor: pointer;
-  transform: scale(4);
   text-decoration: underline;
 }
 
-.projectName {
+.itemName {
   font-weight: bolder;
 }
 
 .item {
   padding: 5px;
+  font-size: 1.2em
 }
 
 .orderBy {

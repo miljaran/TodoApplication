@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
 import './normalize.css'
-import Stats from './stats/Stats';
+import Stats from './Stats/Stats';
 import ListView from "./ItemList/ListView";
 import ItemView from "./Item/ItemView";
 

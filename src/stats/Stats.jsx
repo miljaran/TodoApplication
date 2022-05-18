@@ -1,8 +1,7 @@
-import './Stats.css'
-
 const Stats = (props) => {
   const allItems = props.items
   const doneItems = allItems.filter(item => item.done)
+  const divStyle = {margin: "30px"}
 
   function lateItems() {
     const items = allItems.filter(item => new Date(item.date) < new Date() && !item.done)
@@ -33,14 +32,14 @@ const Stats = (props) => {
 
   return (
     <div className="App">
-      <div className="itemStats">
+      <div style={divStyle}>
         <h3>Tehtävät</h3>
         <p>Tehtävistä <b>{doneItems.length}/{allItems.length}</b> on tehty</p>
         <p><b>{allItems.length - doneItems.length}</b> tehtävää on tekemättä</p>
         <p>Tehtävistä <b>{lateItems()}</b> on myöhässä</p>
       </div>
       <hr/>
-      <div className="dateStats">
+      <div style={divStyle}>
         <h3>Deadlinet</h3>
         <p>{nextDeadline()}</p>
         <p>Seuraavan kahden viikon aikana edessä on <b>{datesInRange(14)}</b> deadlinea</p>

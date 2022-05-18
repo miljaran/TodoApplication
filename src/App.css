@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Libre+Baskerville");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans");
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
@@ -19,7 +18,6 @@ header {
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  margin-top: 0;
 }
 
 .nav {
@@ -63,8 +61,4 @@ input {
 
 .button:hover {
   background-color: #BF98A0;
-}
-
-.desc {
-  color: #633d44;
 }

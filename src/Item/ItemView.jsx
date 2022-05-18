@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const ItemView = (props) => {
   const [inputs, setInputs] = useState({})
   const item = props.item
+  const descStyle = {color: "#633d44"}
   
   const handleInput = (e) => {
     const name = e.target.name
@@ -23,8 +24,8 @@ const ItemView = (props) => {
     <>
     <div>
       <h2>{item.name}</h2>
-      <p><b>Kuvaus:</b> <span className="desc">{item.description}</span></p>
-      <p><b>Deadline:</b> <span className="desc">{new Date(item.date).toLocaleDateString()}</span></p>
+      <p><b>Kuvaus:</b> <span style={descStyle}>{item.description}</span></p>
+      <p><b>Deadline:</b> <span style={descStyle}>{new Date(item.date).toLocaleDateString()}</span></p>
     </div>
     <div>
       <h3>Muokkaa tehtävää</h3>

@@ -12,13 +12,39 @@ const Stats = (props) => {
     return late;
   }
 
+  function nextDeadline() {
+    const copy = items.map(item => {
+      return new Date(item.date)
+    })
+    const today = new Date()
+    const filtered = copy.filter((date) => date > today)
+    if (filtered.length !== 0) {
+      const min = filtered.reduce(function (a, b) { return a < b ? a : b; });
+      return `Seuraava deadline on ${min.toLocaleDateString()}`
+    } else {
+      return "Edessä ei ole deadlineja";
+    }
+  }
+
+  function datesInRange(days) {
+    const copy = items.map(item => {
+      return new Date(item.date)
+    })
+    const today = new Date()
+    const end = new Date(Date.now() + (Number(days) * 3600 * 1000 * 24))
+    const filtered = copy.filter((date) => date > today && date < end)
+    return filtered.length
+  }
+
   return (
     <div className="App">
       <ul>
         <li>{done.length}/{items.length} tehävistä tehty</li>
-        <li>{} tehtävistä tehty ajallaan</li>
+        <li>{items.length - done.length} tehtävää tekemättä</li>
         <li>Tehtävistä {isLate()} on myöhässä</li>
-        <li>Seuraava deadline on {}</li>
+        <li>{nextDeadline()}</li>
+        <li>Seuraavan kahden viikon aikana edessä on {datesInRange(14)} deadlinea</li>
+        <li>Seuraavan kuukauden aikana edessä on {datesInRange(30)} deadlinea</li>
       </ul>
     </div>
   );

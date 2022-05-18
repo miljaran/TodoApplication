@@ -61,8 +61,8 @@ const ListView = (props) => {
 
         return (
           <div key={item.name}>
-          <p onClick={select}>
-            {item.name} - {date.toLocaleDateString()}
+          <p>
+            <span onClick={select}>{item.name}</span> - {date.toLocaleDateString()}
           </p>
           <input type="checkbox" checked={item.done} onChange={handleCheck}/>
           </div>

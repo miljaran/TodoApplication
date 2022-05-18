@@ -13,7 +13,8 @@ const Stats = (props) => {
   }
 
   function nextDeadline() {
-    const copy = items.map(item => {
+    const notDone = items.filter(item => !item.done)
+    const copy = notDone.map(item => {
       return new Date(item.date)
     })
     const today = new Date()
@@ -27,7 +28,8 @@ const Stats = (props) => {
   }
 
   function datesInRange(days) {
-    const copy = items.map(item => {
+    const notDone = items.filter(item => !item.done)
+    const copy = notDone.map(item => {
       return new Date(item.date)
     })
     const today = new Date()
@@ -39,7 +41,7 @@ const Stats = (props) => {
   return (
     <div className="App">
       <ul>
-        <li>{done.length}/{items.length} tehävistä tehty</li>
+        <li>{done.length}/{items.length} tehtävistä tehty</li>
         <li>{items.length - done.length} tehtävää tekemättä</li>
         <li>Tehtävistä {isLate()} on myöhässä</li>
         <li>{nextDeadline()}</li>

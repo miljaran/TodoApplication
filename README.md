@@ -5,7 +5,7 @@ Sovelluksessa käyttäjä pystyy pitämään kirjaa hänen tehtävistään. "Teh
 
 Käyttäjä voi valita, millä perusteella hän haluaa järjestellä tehtävälistan, esimerkiksi aakkosjärjestykseen. Jokaisesta tehtävästä näkyy listanäkymässä nimi, deadline ja tehtävän status. Klikkaamalla tehtävän nimeä pääsee tehtävän omalle sivulle, jossa näkyy myös tehtävän kuvaus ja tehtävää voi muokata tai sen voi poistaa.
 
-Käyttäjä voi myös seurata erilaisia tilastoja tehtävistään Tilastoja-sivulla.
+Käyttäjä voi myös seurata erilaisia tilastoja tehtävistään "Tilastoja"-sivulla.
 
 Sovelluksen tiedot eivät tallennu tällä hetkellä minnekään ja ne nollaantuvat aina kun sivua päivitetään.
 

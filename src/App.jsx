@@ -93,11 +93,13 @@ function App() {
           Tilastoja
         </button>
       </header>
+      <div>
       {
       currentPage === "list" ? <ListView items={todoItems} onSubmit={addItem} onSelect={toItem} onCheck={itemDone}/>
       : currentPage === "stats" ? <Stats items={todoItems}/>
       : <ItemView item={currentItem} editItem={editItem} delete={deleteItem}/>
       }
+      </div>
     </div>
   );
 }

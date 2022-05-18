@@ -78,3 +78,15 @@ input {
 .button:hover {
   background-color: #BF98A0;
 }
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+}

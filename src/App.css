@@ -16,8 +16,8 @@ header {
   color: #D1A5AE;
 }
 
-.heading {
-  font-size: 2.5em;
+h1 {
+  font-size: 2em;
   font-family: 'Playfair Display', serif;
 }
 

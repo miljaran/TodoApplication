@@ -1,11 +1,15 @@
+// todo: clean up code
 import AddItem from "./AddItem";
 import React, { useState } from "react";
+import SingleItem from "./SingleItem";
+import './ListView.css'
 
 const ListView = (props) => {
   const items = props.items
   const [order, setOrder] = useState("none")
 
   const handleChange = (e) => {
+    e.preventDefault();
     const newOrder = e.target.value
     setOrder(newOrder)
     if (newOrder === "alphabet") {
@@ -44,9 +48,11 @@ const ListView = (props) => {
   }
 
   return (
-    <div>
-      <label>
-        Järjestä:
+    <>
+      <div className="itemList">
+        <h3>Tehtävät</h3>
+      <label className="orderBy">
+        Järjestä:&nbsp;
         <select value={order} onChange={handleChange}>
           <option value="none">Ei mitään</option>
           <option value="alphabet">Aakkosittain</option>
@@ -55,21 +61,12 @@ const ListView = (props) => {
         </select>
       </label>
       {items.map(item => {
-        const date = new Date(item.date)
-        function select() {props.onSelect(item)}
-        function handleCheck() {props.onCheck(item.name)}
-
-        return (
-          <div key={item.name}>
-          <p>
-            <span onClick={select}>{item.name}</span> - {date.toLocaleDateString()}
-          </p>
-          <input type="checkbox" checked={item.done} onChange={handleCheck}/>
-          </div>
-        )
+        return <SingleItem key={item.name} item={item} onSelect={props.onSelect} onCheck={props.onCheck}/>
       })}
+      </div>
+      <hr/>
       <AddItem onSubmit={props.onSubmit} items={items}/>
-    </div>
+    </>
   )
 }
 

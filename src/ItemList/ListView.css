@@ -1,0 +1,32 @@
+.projectName:hover {
+  cursor: pointer;
+  transform: scale(4);
+  text-decoration: underline;
+}
+
+.projectName {
+  font-weight: bolder;
+}
+
+.item {
+  padding: 5px;
+}
+
+.orderBy {
+  display: block;
+  margin: 10px
+}
+
+input[type=checkbox] {
+  accent-color: #a13548;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.itemList, .addItem {
+  margin: 30px;
+}
+
+.itemDate {
+  color: #633d44;
+}

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import './App.css';
-import Stats from './Stats';
-import ListView from "./ListView";
-import ItemView from "./ItemView";
+import './normalize.css'
+import Stats from './stats/Stats';
+import ListView from "./ItemList/ListView";
+import ItemView from "./Item/ItemView";
 
 const dummyItems = [
   {
@@ -34,7 +35,7 @@ const dummyItems = [
 function App() {
   const [todoItems, setTodoItems] = useState(dummyItems)
   const [currentPage, setPage] = useState("list")
-  const [selectedItem, setItem] = useState({})
+  const [currentItem, setItem] = useState({})
 
   function addItem(item) {
     const today = (new Date()).toISOString().slice(0, 10);
@@ -52,17 +53,17 @@ function App() {
     setItem(item)
   }
 
-  function doneItem(name) {
-    const copy = JSON.parse(JSON.stringify(todoItems));
-    const item = copy.find((obj) => obj.name === name);
-    item.done = !item.done;
-    setTodoItems(copy)
-  }
-
   function deleteItem(name) {
     const copy = JSON.parse(JSON.stringify(todoItems));
     setTodoItems(copy.filter(item => item.name !== name))
     toList()
+  }
+
+  function itemDone(name) {
+    const copy = JSON.parse(JSON.stringify(todoItems));
+    const item = copy.find((obj) => obj.name === name);
+    item.done = !item.done;
+    setTodoItems(copy)
   }
 
   function toList() {
@@ -80,18 +81,19 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Tehtävälistasovellus</h1>
-      <button onClick={toList}>
-        Tehtävät
-      </button>
-      <button onClick={toStats}>
-        Tilastoja
-      </button>
-      {currentPage === "list"
-      ? <ListView items={todoItems} onSubmit={addItem} onSelect={toItem} onCheck={doneItem}/>
-      : currentPage === "stats"
-        ? <Stats items={todoItems}/>
-        : <ItemView item={selectedItem} editItem={editItem} delete={deleteItem}/>
+      <header>
+        <h1>Tehtävälistasovellus</h1>
+        <button className="nav" onClick={toList}>
+          Tehtävät
+        </button>
+        <button className="nav" onClick={toStats}>
+          Tilastoja
+        </button>
+      </header>
+      {
+      currentPage === "list" ? <ListView items={todoItems} onSubmit={addItem} onSelect={toItem} onCheck={itemDone}/>
+      : currentPage === "stats" ? <Stats items={todoItems}/>
+      : <ItemView item={currentItem} editItem={editItem} delete={deleteItem}/>
       }
     </div>
   );

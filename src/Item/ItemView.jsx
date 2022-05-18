@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 
 const ItemView = (props) => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.editItem(item.name, inputs)
-    setInputs({})
-  }
   const [inputs, setInputs] = useState({})
+  const item = props.item
+  
   const handleInput = (e) => {
     const name = e.target.name
     const value = e.target.value
     setInputs(values => ({...values, [name]: value}))
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.editItem(item.name, inputs)
+    setInputs({})
+  }
   const handleDelete = (e) => {
     e.preventDefault();
     props.delete(item.name)
   }
-  const item = props.item
-  const date = new Date(item.date)
 
   return (
+    <>
     <div>
-      <p>Tehtävän nimi: {item.name}</p>
-      <p>Tehtävän kuvaus: {item.description}</p>
-      <p>Tehtävän deadline: {date.toLocaleDateString()}</p>
-      <h2>Muokkaa tehtävää</h2>
+      <h2>{item.name}</h2>
+      <p><b>Kuvaus:</b> <span className="desc">{item.description}</span></p>
+      <p><b>Deadline:</b> <span className="desc">{new Date(item.date).toLocaleDateString()}</span></p>
+    </div>
+    <div>
+      <h3>Muokkaa tehtävää</h3>
       <form onSubmit={handleSubmit}>
         <label>
-          Uusi kuvaus:
+          Uusi kuvaus:&nbsp;
           <input
             type="text"
             name="description"
@@ -37,7 +40,7 @@ const ItemView = (props) => {
         </label>
         <br/>
         <label>
-          Uusi päivämäärä:
+          Uusi päivämäärä:&nbsp;
           <input
             type="date"
             name="date"
@@ -46,10 +49,11 @@ const ItemView = (props) => {
           />
         </label>
         <br/>
-        <input type="submit" />
+        <input className="button" type="submit" value="Päivitä" />
       </form>
-      <button onClick={handleDelete}>Poista tehtävä</button>
-    </div>
+      <button className="button" onClick={handleDelete}>Poista tehtävä</button>
+      </div>
+    </>
   )
 }
 

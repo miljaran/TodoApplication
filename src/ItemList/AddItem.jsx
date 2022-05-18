@@ -1,3 +1,4 @@
+// todo: clean code
 import React, { useState } from "react";
 
 const AddItem = (props) => {
@@ -23,13 +24,14 @@ const AddItem = (props) => {
   }
 
   return (
-    <div>
+    <div className="addItem">
       <h3>Lisää uusi tehtävä</h3>
-      <div id="error"></div>
+      <p style={{ color: "#a13548" }} id="error"></p>
       <form onSubmit={handleSubmit}>
-        <label>
-          Tehtävän nimi:
+        <label className="label">
+          Tehtävän nimi:&nbsp;
           <input
+            className="checkbox"
             type="text"
             name="name"
             value={inputs.name || ""}
@@ -37,8 +39,8 @@ const AddItem = (props) => {
           />
         </label>
         <br/>
-        <label>
-          Tehtävän kuvaus:
+        <label> 
+          Tehtävän kuvaus:&nbsp;
           <input
             type="text"
             name="description"
@@ -48,7 +50,7 @@ const AddItem = (props) => {
         </label>
         <br/>
         {<label>
-          Tehtävän deadline:
+          Tehtävän deadline:&nbsp;
           <input
             type="date"
             name="date"
@@ -57,7 +59,7 @@ const AddItem = (props) => {
           />
         </label>}
         <br/>
-        <input type="submit" />
+        <input className="button" type="submit" value="Lisää" />
       </form>
     </div>
   )

@@ -2,6 +2,7 @@ const SingleItem = (props) => {
 
   const item = props.item
   const date = new Date(item.date)
+  // Funktiot tehtävän valitsemiseen ja statuksen vaihtamiseen
   function select() {props.onSelect(item)}
   function handleCheck() {props.onCheck(item.name)}
 

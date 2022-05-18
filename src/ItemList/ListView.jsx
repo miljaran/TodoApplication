@@ -1,4 +1,3 @@
-// todo: clean up code
 import AddItem from "./AddItem";
 import React, { useState } from "react";
 import SingleItem from "./SingleItem";
@@ -8,7 +7,7 @@ const ListView = (props) => {
   const items = props.items
   const [order, setOrder] = useState("none")
 
-  // Funktio järjestysvalinnan muuttamiseen
+  // Funktio valinnan muuttamiseen
   const handleChange = (e) => {
     e.preventDefault();
     const newOrder = e.target.value

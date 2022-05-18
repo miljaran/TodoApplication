@@ -1,8 +1,9 @@
-// todo: clean code
 import React, { useState } from "react";
 
 const AddItem = (props) => {
   const [inputs, setInputs] = useState({})
+
+  // Funktiot lomakkeen käsittelyyn
   const handleInput = (e) => {
     const name = e.target.name
     const value = e.target.value

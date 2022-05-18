@@ -1,4 +1,4 @@
-.projectName:hover {
+.itemName:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -9,7 +9,6 @@
 
 .item {
   padding: 5px;
-  font-size: 1.1em
 }
 
 .orderBy {
@@ -29,10 +28,4 @@ input[type=checkbox] {
 
 .itemDate {
   color: #633d44;
-}
-
-@media (min-width: 1024px) {
-  .item {
-    font-size: 1.2em;
-  }
 }

@@ -16,19 +16,16 @@ header {
   color: #D1A5AE;
 }
 
-/*koko sivun otsikko*/
 h1 {
   font-size: 2em;
   font-family: 'Playfair Display', serif;
 }
 
-/*projektin nimi omalla sivulla*/
 h2 {
   font-size: 1.9em;
   font-family: 'Playfair Display', serif;
 }
 
-/*väliotsikot pääsivuilla*/
 h3 {
   font-size: 1.6em;
   font-family: 'Playfair Display', serif;

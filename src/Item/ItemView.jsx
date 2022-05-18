@@ -4,7 +4,8 @@ const ItemView = (props) => {
   const [inputs, setInputs] = useState({})
   const item = props.item
   const descStyle = {color: "#633d44"}
-  
+
+  // Funktiot lomakkeen käsittelyyn
   const handleInput = (e) => {
     const name = e.target.name
     const value = e.target.value

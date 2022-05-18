@@ -3,6 +3,7 @@ const Stats = (props) => {
   const doneItems = allItems.filter(item => item.done)
   const divStyle = {margin: "30px"}
 
+  // Funktiot jotka etsivät ehdon mukaisia tehtäviä
   function lateItems() {
     const items = allItems.filter(item => new Date(item.date) < new Date() && !item.done)
     return items.length

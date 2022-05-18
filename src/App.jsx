@@ -5,6 +5,7 @@ import Stats from './Stats/Stats';
 import ListView from "./ItemList/ListView";
 import ItemView from "./Item/ItemView";
 
+// Esimerkkisisältö
 const dummyItems = [
   {
     name: "Projekti",
@@ -37,6 +38,7 @@ function App() {
   const [currentPage, setPage] = useState("list")
   const [currentItem, setItem] = useState({})
 
+  // Funktiot tehtävien lisäämiseen ja muokkaamiseen
   function addItem(item) {
     const today = (new Date()).toISOString().slice(0, 10);
     const newItem = { name: item.name, description: item.description || "Ei kuvausta", date: item.date || today, done: false }
@@ -66,6 +68,7 @@ function App() {
     setTodoItems(copy)
   }
 
+  // Funktiot "sivunvaihtoon"
   function toList() {
     setPage("list")
   }

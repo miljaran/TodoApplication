@@ -30,3 +30,9 @@ input[type=checkbox] {
 .itemDate {
   color: #633d44;
 }
+
+@media (min-width: 1024px) {
+  .item {
+    font-size: 1.2em;
+  }
+}

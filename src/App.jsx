@@ -85,7 +85,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Tehtävälistasovellus</h1>
+        <h1 className="heading">Tehtävälistasovellus</h1>
         <button className="nav" onClick={toList}>
           Tehtävät
         </button>
